@@ -1,0 +1,90 @@
+=== CLM Tools ===
+Nome do Plugin: CLM AutoPosting
+Autor: Celso Luis Martins
+Site: https://celsoluism.online
+Versão Atual: 2026.0720.2100
+Descrição: Framework Core e módulos de redes sociais atualizados com persistência segura de opções, sistema robusto de logs detalhados para CronJob/APIs e sincronização total do ecossistema.
+
+== Changelog ==
+
+** Versão 2026.0720.2100
+-- Correção crítica no salvamento e persistência das opções do painel admin, garantindo que as abas e menus mantenham os dados salvos sem limpar as configurações ao navegar entre telas.
+-- Aprimoramento profundo na classe Logger (includes/clm-AutoPosting-Logger.php) e no motor de filas/agendamento (includes/clm-AutoPosting-Scheduler.php) para assegurar a criação e escrita em tempo real de logs ultra detalhados no arquivo clm_AutoPoster_logs.txt.
+-- Preservação rigorosa de todas as implementações manuais anteriores e integridade estrutural da árvore de arquivos.
+
+** Versão 2026.0720.2000
+-- Sincronização dos blocos de autenticação do Facebook (separação dinâmica entre APP Method e Graph API).
+** Versão 2026.0720.1625
+-- Arquivos atualizados: assets/js/clm-AutoPosting-Facebook.js, assets/js/clm-AutoPosting-Instagram.js, assets/js/clm-AutoPosting-Telegram.js, assets/js/clm-AutoPosting-WhatsApp.js[cite: 14, 15, 16, 17]
+-- Padronização de cabeçalhos e inclusão de escopo seguro em JavaScript para todos os scripts dinâmicos de front-end do painel admin.
+
+** Versão 2026.0720.1619
+-- Arquivo atualizado: clm-AutoPosting.php
+-- Inicialização completa do ecossistema: Descomentadas todas as dependências do Core, Scheduler e APIs de Redes Sociais, habilitando o processamento em background do WP-Cron.
+-- Inclusão da dependência do módulo `clm-AutoPosting-Shortener.php` na rotina de carregamento primário.
+-- Sincronização da constante global CLM_AUTOPOSTING_VERSION refletindo a conclusão da arquitetura.
+
+** Versão 2026.0720.1622
+-- Arquivo atualizado: includes/clm-AutoPosting-VersionCheck.php
+-- Aprimorada a conexão HTTP com a URL do servidor remoto ajustando timeout para 10s e blindagem de constante global.
+
+** Versão 2026.0720.1620
+-- Arquivo atualizado: includes/clm-AutoPosting-WhatsApp.php
+-- Implementação da requisição POST nativa seguindo os parâmetros oficiais da Meta WhatsApp Cloud API (Graph).
+
+** Versão 2026.0720.1616
+-- Arquivo atualizado: includes/clm-AutoPosting-Telegram.php
+-- Implementação integral da Telegram Bot API.
+
+** Versão 2026.0720.1614
+-- Arquivo atualizado: includes/clm-AutoPosting-Shortener.php
+-- Revalidação final do módulo de encurtadores de URL mantendo as integrações de segurança e timeouts ampliados.
+
+** Versão 2026.0720.1613
+-- Arquivo atualizado: includes/clm-AutoPosting-Logger.php
+-- Adicionada blindagem e validação da constante global.
+
+** Versão 2026.0720.1612
+-- Arquivo atualizado: includes/clm-AutoPosting-Instagram.php
+-- Implementação integral da Instagram Graph API validando o formato obrigatório de 2 etapas da Meta.
+
+** Versão 2026.0720.1611
+-- Arquivo atualizado: includes/clm-AutoPosting-Facebook.php
+-- Implementação da Graph API do Facebook lendo variáveis do banco de dados e enviando o formato dinâmico.
+
+** Versão 2026.0720.1600
+-- Arquivo atualizado: includes/clm-AutoPosting-Scheduler.php
+-- Aprimoramento da regra Taxonomies (Include/Exclude e Checkboxes).
+-- Implementação de restrições globais de Maximum Posting.
+
+** Versão 2026.0720.1557
+-- Revisão profunda do painel admin (clm-AutoPosting_admin.php).
+-- Implementação no Core para capturar Third-party plugins e uso inteligente do Excerpt.
+
+** Versão 2026.0720.1600
+-- Revisão profunda do painel admin para garantir salvamento isolado de todas as abas no banco de dados (_clm_autoposting_).
+-- Implementação da lógica de captura de posts de plugins de terceiros (Third-party) e uso de Resumo (Excerpt) no Core.
+-- Aprimoramento do Scheduler para respeitar estritamente Schedule Time, Distance Time e Exclude Posting Days.
+-- Integração das regras de Taxonomia avançadas (Include/Exclude Tags e Categorias).
+-- Ativação das lógicas de API dos encurtadores de URL (TinyURL, Bit.ly, Shorte.st).
+-- Estruturação dos parâmetros de API Graph e blocos de formato de mensagem para as redes sociais.
+
+[Versão 2026.0720.1550] - Lançamento da Arquitetura Modular
+- Adicionado: Módulo Core e gatilhos de publicação interceptando WP.
+- Adicionado: Módulo Scheduler com validação completa (Include/Exclude, Dias, Horas e Distância).
+- Adicionado: Integração de encurtadores (TinyURL, Shorte.st, Bit.ly e nativo do WP).
+- Modificado: Painel visual separado em arquivos CSS/JS para carregamento ultrarrápido.
+- Adicionado: Bancos de dados '_clm_autoposting_*' separados para não sobrecarregar options globais.
+- Adicionado: Arquivo utilitário para Logger dinâmico (clm_AutoPoster_logs.txt).
+
+** Versão 2026.0720.1414
+-- Criação da estrutura base e árvore de diretórios do plugin Auto Posting Express
+-- Implementação do painel de administração seguindo o layout UI padronizado (laranja/cinza)
+-- Criação dos menus de "Configurações Gerais" com limitador de agendamentos, ativadores e sistema de logs (clm_AutoPoster_logs.txt)
+-- Integração do "Scheduler" com controles avançados de Delay, Distance Time, Schedule Time e Exclusão de Dias
+-- Adição de seletores dinâmicos de Taxonomias (Categorias e Tags) para inclusão/exclusão de publicações
+-- Integração de Encurtadores de URL (WordPress nativo, tinyURL, Bit.ly e Shorte.st)
+-- Criação dos módulos de APIs independentes para Facebook (Posts, Páginas, Mídia, Stories), Instagram, Telegram e WhatsApp
+-- Parametrização estrita do banco de dados para salvar opções com o prefixo _clm_autoposting_ separadamente
+-- Sistema de verificação remota de atualizações comparando a versão instalada com o Changelog online
+-- Preservação do sistema de instalação e funções nativas de ícones

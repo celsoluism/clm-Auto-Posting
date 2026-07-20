@@ -1,0 +1,21 @@
+=== CLM Tools ===
+Nome do Plugin: CLM Auto Posting Express
+Autor: Celso Luis Martins
+Site: https://celsoluism.online
+Versão Atual: 2026.0720.1414
+Descrição: Plugin completo de compartilhamento automatizado de produtos, páginas e posts para Facebook, Instagram, Telegram e WhatsApp com agendamento avançado.
+
+== Changelog ==
+
+** Versão 2026.0720.1414
+-- Criação da estrutura base e árvore de diretórios do plugin Auto Posting Express
+-- Implementação do painel de administração seguindo o layout UI padronizado (laranja/cinza)
+-- Criação dos menus de "Configurações Gerais" com limitador de agendamentos, ativadores e sistema de logs (clm_AutoPoster_logs.txt)
+-- Integração do "Scheduler" com controles avançados de Delay, Distance Time, Schedule Time e Exclusão de Dias
+-- Adição de seletores dinâmicos de Taxonomias (Categorias e Tags) para inclusão/exclusão de publicações
+-- Integração de Encurtadores de URL (WordPress nativo, tinyURL, Bit.ly e Shorte.st)
+-- Criação dos módulos de APIs independentes para Facebook (Posts, Páginas, Mídia, Stories), Instagram, Telegram e WhatsApp
+-- Parametrização estrita do banco de dados para salvar opções com o prefixo _clm_autoposting_ separadamente
+-- Sistema de verificação remota de atualizações comparando a versão instalada com o Changelog online
+-- Preservação do sistema de instalação e funções nativas de ícones[2026-07-20 21:44:09] [CORE] - Novo conteúdo detectado (ID: 7805 | Tipo: product)
+[2026-07-20 21:44:09] [SCHEDULER] - Iniciando processamento das regras (WP-Cron) para o Post ID: 7805
